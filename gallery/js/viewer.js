@@ -44,7 +44,7 @@ function getImgTitle(src) {
 }
 function titleToPath(s) {
 	var title = s.replace(/\?/, '');
-	return '/images/'+title+'.jpg';
+	return '/gallery/img/'+title+'.jpg';
 }
 // history functions
 function historyPush(u) {
