@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		return getImgPath(obj.getAttribute('src'));
 	}); // array of big images
 	// show image by direct link
-	if (location.search && /^\?20\d{2}_\d{3}$/.test(location.search)) {
+	if (location.search) {
 		var imgSrc = titleToPath(location.search);
 		openViewer();
 		addSpinner(viewerFig);
@@ -184,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		stop();
 		if (location.search) {
 			var imgSrc = titleToPath(window.history.state.src);
+			console.log(imgSrc, window.history.state.src);
 			openViewer();
 			addSpinner(viewerFig);
 			viewImg(imgSrc, viewerFig).then(function() {
