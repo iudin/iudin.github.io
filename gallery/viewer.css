@@ -1,0 +1,152 @@
+body.lock {
+	overflow: hidden;
+}
+.gallery {
+	text-align: center;
+}
+.gallery > figure {
+	display: inline-block;
+	width: auto;
+	margin: 4px;
+	cursor: pointer;
+}
+.gallery > figure:hover {
+	box-shadow: 0 1px 5px rgba(0,0,0,.8);
+}
+.gallery > figure > img {
+	display: block;
+}
+.viewer {
+	position: fixed;
+	overflow: auto;
+	top: -10px;
+	width: 100%;
+	height: 1px;
+	max-height: 100vh;
+	background-color: rgba(0,0,0,.88);
+	z-index: 8;
+	transition: all .3s ease;
+}
+.viewer.active {
+	top: 0;
+	height: 100%;
+}
+.viewer > .viewer-close {
+	position: fixed;
+	display: none;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	text-align: center;
+	line-height: 25px;
+	color: #CCCCCC;
+	background-color: rgba(0,0,0,.5);
+	border-radius: 20px;
+	box-shadow: 0 0 1px 1px rgba(0,0,0,.9);
+	cursor: pointer;
+}
+.viewer > .viewer-close:hover {
+	color: #FFFFFF;
+}
+.viewer.active > .viewer-close {
+	display: block;
+}
+.viewer > figure {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+	min-height: 90%;
+	margin: 10px;
+	text-align: center;
+	color: #FFFFFF;
+}
+.viewer > figure > img {
+	display: block;
+	max-width: 100%;
+	max-height: 96vh;
+	margin: auto;
+	box-shadow: 0 0 2px 1px rgba(255,255,255,.5);
+	opacity: 0;
+}
+.viewer > figure > figcaption {
+	padding: 10px;
+	text-align: center;
+	color: #FFFFFF;
+}
+.viewer.active > figure {
+	display: flex;
+}
+@media (max-width: 767px) {
+	.viewer > figure {
+		margin: 4px 0 0;
+	}
+}
+.viewer-nav {
+	position: fixed;
+	bottom: 10px;
+	width: 100%;
+	display: none;
+	text-align: center;
+}
+.viewer.active > .viewer-nav {
+	display: block;
+}
+.controls {
+	width: 160px;
+	margin: 0 auto;
+	background-color: rgba(0,0,0,.5);
+	border-radius: 20px;
+	box-shadow: 0 0 1px 1px rgba(0,0,0,.9);
+}
+.controls a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 0 10px;
+}
+.controls a:hover > svg {
+	fill: #FFFFFF;
+}
+.play > svg > rect {
+	display: none;
+}
+.play > svg > polygon {
+	display: block;
+}
+.pause > svg > rect {
+	display: block;
+}
+.pause > svg > polygon {
+	display: none;
+}
+.spinner {
+	position: absolute;
+	top: 48%;
+	left: 0;
+	right: 0;
+	display: block;
+	margin: 0 auto;
+	z-index: 9;
+}
+.spinner circle {
+	fill: none;
+	stroke: #777777;
+	stroke-width: 3;
+	stroke-linecap: round;
+	stroke-dashoffset: 0;
+	stroke-dasharray: 70% 30%;
+	transform-origin: 15px 15px;
+	animation: spin 1s infinite linear; 
+}
+@keyframes spin {
+	to {
+		stroke-dashoffset: 30;
+	}
+}
