@@ -2,8 +2,43 @@
 <html>
 <head>
 <title>One-page gallery by iudin</title>
+<link rel="stylesheet" href="css/viewer.css">
+<script type="text/javascript" defer src="js/viewer.js"></script>
 </head>
 <body>
-	<p>Hi there!</p>
+<div class="viewer">
+	<div class="viewer-close">&times</div>
+	<figure></figure>
+	<div class="viewer-nav">
+		<div class="controls">
+			<a href="" target="_blank" class="prev">
+				<svg width="30" height="30" fill="#CCCCCC">
+					<polygon points="5,15 15,7 15,15 25,7 25,23 15,15 15,23" />
+				</svg>
+			</a>
+			<a href="#" class="slide play">
+				<svg width="30" height="30" fill="#CCCCCC">
+					<polygon points="21,15 9,7 9,23" />
+					<rect x="10" y="7" width="4" height="16" />
+					<rect x="16" y="7" width="4" height="16" />
+				</svg>
+			</a>
+			<a href="" target="_blank" class="next">
+				<svg width="30" height="30" fill="#CCCCCC">
+					<polygon points="25,15 15,7 15,15 5,7 5,23 15,15 15,23" />
+				</svg>
+			</a>
+		</div><!-- /.controls -->
+	</div><!-- /.viewer-nav -->
+</div><!-- /.viewer -->
+<div class="gallery">
+	<figure><img src="/img/001.jpg" alt=""></figure>
+	<figure><img src="/img/002.jpg" alt=""></figure>
+	<figure><img src="/img/003.jpg" alt=""></figure>
+	<figure><img src="/img/004.jpg" alt=""></figure>
+	<figure><img src="/img/005.jpg" alt=""></figure>
+	<figure><img src="/img/006.jpg" alt=""></figure>
+	<figure><img src="/img/007.jpg" alt=""></figure>
+</div>
 </body>
 </html>
