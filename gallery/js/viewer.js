@@ -43,8 +43,8 @@ function getImgTitle(src) {
 	return src.replace(/(img\/|thumbnails\/|.jpg|.png|^\/)/g, '');
 }
 function titleToPath(s) {
-	var title = s.replace(/\?/, '');
-	return '/img/'+title+'.jpg';
+	var title = s.replace(/\?gallery/, '');
+	return '/gallery/img/'+title+'.jpg';
 }
 // history functions
 function historyPush(u) {
