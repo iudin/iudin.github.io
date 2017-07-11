@@ -1,5 +1,27 @@
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 96vh;
+	margin: 0;
+}
 body.lock {
 	overflow: hidden;
+}
+header {
+	width: 96%;
+	margin: 0 auto 20px;
+	text-align: center;
+	color: #555555;
+	border-bottom: 1px solid #555555;
+}
+article {
+	flex: 1;
+}
+footer {
+	width: 96%;
+	margin: 0 auto;
+	color: #555555;
+	border-top: 1px solid #555555;
 }
 .gallery {
 	text-align: center;
