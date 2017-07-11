@@ -40,10 +40,10 @@ function getImgPath(src) {
 }
 // img/thumbnails/title.jpg -> title
 function getImgTitle(src) {
-	return src.replace(/(img\/|thumbnails\/|.jpg|.png|^\/)/g, '');
+	return src.replace(/(img\/|thumbnails\/|gallery\/|.jpg|.png|^\/)/g, '');
 }
 function titleToPath(s) {
-	var title = s.replace(/\?gallery/, '');
+	var title = s.replace(/\?/, '');
 	return '/gallery/img/'+title+'.jpg';
 }
 // history functions
@@ -135,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		el.addEventListener('click', function() {
 			var imgSrc = getImgPath(el.getAttribute('src'));
 			historyPush(el.getAttribute('src'));
-			console.log(imgSrc, el.getAttribute('src'));
 			openViewer();
 			addSpinner(viewerFig);
 			viewImg(imgSrc, viewerFig).then(function() {
@@ -185,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		stop();
 		if (location.search) {
 			var imgSrc = titleToPath(window.history.state.src);
-			console.log(imgSrc, window.history.state.src);
 			openViewer();
 			addSpinner(viewerFig);
 			viewImg(imgSrc, viewerFig).then(function() {
