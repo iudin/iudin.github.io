@@ -135,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		el.addEventListener('click', function() {
 			var imgSrc = getImgPath(el.getAttribute('src'));
 			historyPush(el.getAttribute('src'));
+			console.log(imgSrc, el.getAttribute('src'));
 			openViewer();
 			addSpinner(viewerFig);
 			viewImg(imgSrc, viewerFig).then(function() {
